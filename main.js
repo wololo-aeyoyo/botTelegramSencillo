@@ -57,7 +57,6 @@ bot.command("/g", ctx => {
 
 });
 
-
 console.log("Launch.")
 bot.launch();
 
