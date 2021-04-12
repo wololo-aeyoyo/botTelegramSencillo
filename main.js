@@ -39,9 +39,9 @@ bot.command("/dolar", ctx => {
         .then(valorUSD => 
             ctx.reply(`epale ${valorUSD}`
         ))
-    .catch(() =>{
+    .catch((error) =>{
         ctx.reply("algo malo paso o se rompio")
-
+        console.error(error)
     });
 
 });
@@ -52,8 +52,9 @@ bot.command("/g", ctx => {
             {url:urlewd.file_url},
             {caption: `Source: ${urlewd.source != null ?  urlewd.source: "No hay el mio."}`}
            ))
-        .catch(()=>{
+        .catch((error)=>{
             ctx.reply("La cagaste en uno de los tags");
+            console.error(error);
         });
                  
 
