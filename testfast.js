@@ -1,3 +1,3 @@
-const dollar = require("./gelbooru");
+const dollar = require("./modulos/gelburu");
 
-dollar.then(dollarValor => console.log(dollarValor));
+dollar().then(dollarValor => console.log(dollarValor));
