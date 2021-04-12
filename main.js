@@ -1,9 +1,11 @@
-require('dotenv').config()
 const { Telegraf } = require("telegraf")
 const getDollar = require("./modulos/dolar");
 const getBooru = require("./modulos/gelburu");
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 const development = process.env.NODE_ENV;
+if (development) {
+    require('dotenv').config()
+}
 
 const bot = new Telegraf(process.env.TOKENTELEGRAM);
 
@@ -20,8 +22,8 @@ bot.hears(["gabriel","Gabriel","GABRIEL"], ctx =>{
        )
 })
 
-bot.hears("marico el que lo lea",ctx => {
-    ctx.reply("mas marico es el pana "+ ctx.get);
+bot.hears("marico el que lo lea", ctx => {
+    ctx.reply(`mas marico es el pana @${ctx.from.username}`);
 });
 
 bot.hears("gabriel", ctx => {
