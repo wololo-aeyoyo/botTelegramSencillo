@@ -18,7 +18,6 @@ bot.hears(/(gabriel)/gmi, ctx =>{
     ctx.replyWithPhoto(
         {url:"https://i2-prod.mirror.co.uk/incoming/article1448101.ece/ALTERNATES/s615b/Skeleton%20in%20Sweden"});
 
-    ctx.reply("lo quiero mucho al pana @Miguel129");
 })
 
 bot.hears(/(marico el que lo lea)/gmi, ctx => {
@@ -27,7 +26,8 @@ bot.hears(/(marico el que lo lea)/gmi, ctx => {
 
 bot.hears(/(miguel)/gmi, ctx => {
     ctx.replyWithVideo({ source: "./videos/el pana Miguel.mp4"});
-    
+    ctx.reply("lo quiero mucho al pana @Miguel129");
+
 });
 
 
