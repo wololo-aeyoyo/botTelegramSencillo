@@ -58,6 +58,13 @@ bot.hears(/(frankcys)/gmi, ctx =>{
        )
 })
 
+bot.hears([/(joseph)/gmi,/(gioseph)/gmi], ctx =>{
+    ctx.replyWithVideo({ source: "./videos/TENGO_UN_POLLoN.134.mp4"});
+    ctx.reply("8=====================================  (i)");
+
+})
+
+
 
 bot.command("/dolar", ctx => {
     getDollar(ctx.message.text)
