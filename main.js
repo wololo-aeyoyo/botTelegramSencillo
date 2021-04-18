@@ -1,6 +1,11 @@
 const { Telegraf, Context } = require("telegraf")
 const getDollar = require("./modulos/dolar");
 const getBooru = require("./modulos/gelburu");
+const getVideo = require("./modulos/youtube-dl");
+const commandArgsMiddleware = require('./modulos/exponerComandos')
+const fs = require('fs')
+
+
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 const development = process.env.NODE_ENV;
 if (development) {
@@ -8,6 +13,7 @@ if (development) {
 }
 
 const bot = new Telegraf(process.env.TOKENTELEGRAM);
+bot.use(commandArgsMiddleware());
 
 bot.start((ctx)=>{  
     ctx.reply("Epale");
@@ -26,6 +32,7 @@ bot.hears(/(gabriel)/gmi, ctx =>{
 
 bot.hears(/(marico el que lo lea)/gmi, ctx => {
     ctx.reply(`mas marico es el pana @${ctx.from.username}`);
+    
 });
 
 bot.hears(/(miguel)/gmi, ctx => {
@@ -60,9 +67,25 @@ bot.hears(/(frankcys)/gmi, ctx =>{
 
 bot.hears([/(joseph)/gmi,/(gioseph)/gmi], ctx =>{
     ctx.replyWithVideo({ source: "./videos/TENGO_UN_POLLoN.134.mp4"});
-    ctx.reply("8=====================================  (i)");
+    ctx.reply("8=====================================D  (i)");
 
 })
+
+bot.command("/bajar", ctx =>{
+    getVideo(ctx)
+    .then(data => {
+        ctx.reply("subiendo el video...")
+        .then(ctx.replyWithVideo({source: data})
+        
+        .then(fs.unlink(data,()=>{})));
+    })
+    .catch((error)=>{
+        ctx.reply(`Algo paso con error: ${error.stderr}`)
+        console.log(error)
+    })
+
+});
+
 
 
 
@@ -91,6 +114,10 @@ bot.command("/g", ctx => {
                  
 
 });
+
+bot.command("/culo",ctx=>{
+    console.log(ctx.message)
+})
 
 console.log("Launch.")
 bot.launch();

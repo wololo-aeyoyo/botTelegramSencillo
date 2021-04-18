@@ -1,3 +1,4 @@
 node_modules/
 variblesambient.ps1
 .env
+.vs/slnx.sqlite
