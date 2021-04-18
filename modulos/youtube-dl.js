@@ -1,4 +1,5 @@
 const youtubedl = require("youtube-dl-exec");
+const fs = require('fs');
 
 module.exports =  function videoBajar(ctx) {
     return new Promise(async(resolve, reject)=>{
@@ -8,6 +9,12 @@ module.exports =  function videoBajar(ctx) {
                 o:[`/tmp/${ctx.message.message_id}.mp4`]
             })
             
+
+            fs.readdir("./tmp/", (err, files) => {
+                files.forEach(file => {
+                  console.log(file);
+                });
+              });
            path = data.match(/(?<=Destination: ).*/)
            console.log(path[0])
             resolve(`tmp/${ctx.message.message_id}.mp4`)
