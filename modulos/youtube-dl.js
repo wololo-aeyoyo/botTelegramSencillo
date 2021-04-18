@@ -8,8 +8,8 @@ module.exports =  function videoBajar(ctx) {
                 o:[`/tmp/${ctx.message.message_id}.mp4`]
             })
             
-           //path = data.match(/(?<=Destination: ).*/)
-           //console.log(path[0])
+           path = data.match(/(?<=Destination: ).*/)
+           console.log(path[0])
             resolve(`tmp/${ctx.message.message_id}.mp4`)
             
 
