@@ -5,12 +5,12 @@ module.exports =  function videoBajar(ctx) {
         try{
             data = await youtubedl(ctx.message.text.replace("/bajar",""),{
                 f: ["bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4"],
-                o:[`/videos/${ctx.message.message_id}.mp4`]
+                o:[`/tmp/${ctx.message.message_id}.mp4`]
             })
             
            //path = data.match(/(?<=Destination: ).*/)
            //console.log(path[0])
-            resolve(`videos/${ctx.message.message_id}.mp4`)
+            resolve(`tmp/${ctx.message.message_id}.mp4`)
             
 
         }
