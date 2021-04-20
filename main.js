@@ -36,10 +36,18 @@ bot.hears(/(marico el que lo lea)/gmi, ctx => {
 });
 
 bot.hears(/(miguel)/gmi, ctx => {
-    ctx.replyWithVideo({ source: "./videos/el pana Miguel.mp4"});
-    ctx.reply("lo quiero mucho al pana @Miguel129");
+    ctx.replyWithVideo({ source: "./videos/el pana Miguel.mp4"})
+    .then(ctx.reply("lo quiero mucho al pana @Miguel129"));
+    
 
 });
+bot.hears([/(lol)/gmi,/(league of legends)/gmi], ctx => {
+    ctx.replyWithVideo({ source: "./videos/el_lol.mp4"})
+    .then(ctx.reply(`deja el lol piazo e loco @${ctx.from.username}`));
+    
+
+});
+
 
 
 
@@ -55,7 +63,7 @@ bot.hears(/(kelly)/gmi, ctx =>{
         {caption: "flatchest btfo HOHOHOOHOHOHO"}
        
        )
-})
+});
 
 bot.hears(/(frankcys)/gmi, ctx =>{
     ctx.replyWithPhoto(
@@ -63,13 +71,13 @@ bot.hears(/(frankcys)/gmi, ctx =>{
         {caption: "Esponja para dejarlos zeko zeko"}
        
        )
-})
+});
 
 bot.hears([/(joseph)/gmi,/(gioseph)/gmi], ctx =>{
-    ctx.replyWithVideo({ source: "./videos/TENGO_UN_POLLoN.134.mp4"});
-    ctx.reply("8=====================================D  (i)");
+    ctx.replyWithVideo({ source: "./videos/TENGO_UN_POLLoN.134.mp4"})
+    .then(ctx.reply("8=====================================D  (i)"));
 
-})
+});
 
 bot.command("/bajar", ctx =>{
     getVideo(ctx)
