@@ -41,11 +41,18 @@ bot.hears(/(miguel)/gmi, ctx => {
     
 
 });
+
+bot.hears(/(siu)/gmi, ctx => {
+    ctx.replyWithVideo({ source: "./videos/siuuu.mp4"})
+    .then(ctx.reply("EL BICHOOOOOOOOOOO SIUUUUUUU"));
+    
+
+});
+
 bot.hears([/(lol)/gmi,/(league of legends)/gmi], ctx => {
     ctx.replyWithVideo({ source: "./videos/el_lol.mp4"})
     .then(ctx.reply(`deja el lol piazo e loco @${ctx.from.username}`));
     
-
 });
 
 
