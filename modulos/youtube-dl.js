@@ -6,7 +6,7 @@ module.exports =  function videoBajar(ctx) {
         try{
             data = await youtubedl(ctx.message.text.replace("/bajar",""),{
                 f: ["bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4"],
-                o:[`/tmp/${ctx.message.message_id}.mp4`]
+                o:[`./tmp/${ctx.message.message_id}.mp4`]
             })
             
 
