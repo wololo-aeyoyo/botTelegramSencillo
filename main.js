@@ -23,11 +23,8 @@ bot.start((ctx)=>{
 bot.hears(/(gabriel)/gmi, ctx =>{
     ctx.replyWithPhoto(
         {url:"https://i2-prod.mirror.co.uk/incoming/article1448101.ece/ALTERNATES/s615b/Skeleton%20in%20Sweden"},
-        {caption: "El pana @GabrielReinoza esta zeko zeko rip"}
-
-        
+        {caption: "El pana @GabrielReinoza esta zeko zeko rip"}      
         );
-
 })
 
 bot.hears(/(marico el que lo lea)/gmi, ctx => {
@@ -38,25 +35,24 @@ bot.hears(/(marico el que lo lea)/gmi, ctx => {
 bot.hears(/(miguel)/gmi, ctx => {
     ctx.replyWithVideo({ source: "./videos/el pana Miguel.mp4"})
     .then(ctx.reply("lo quiero mucho al pana @Miguel129"));
-    
-
 });
 
 bot.hears(/(siu)/gmi, ctx => {
     ctx.replyWithVideo({ source: "./videos/siuuu.mp4"})
     .then(ctx.reply("EL BICHOOOOOOOOOOO SIUUUUUUU"));
-    
+});
 
+bot.hears(/(el bicho)/gmi, ctx => {
+    ctx.reply("EL BICHOOOOOOOOOOO SIUUUUUUU");
+});
+
+bot.hears(/(mi bicho)/gmi, ctx => {
+    ctx.reply("EL BICHOOOOOOOOOOO SIUUUUUUU");
 });
 
 bot.hears([/(lol)/gmi,/(league of legends)/gmi], ctx => {
-    ctx.replyWithVideo({ source: "./videos/el_lol.mp4"})
-    .then(ctx.reply(`deja el lol piazo e loco @${ctx.from.username}`));
-    
+    ctx.reply(`Vamo a juga lol menores @${ctx.from.username}`);
 });
-
-
-
 
 bot.hears("megumi", ctx => {
     ctx.replyWithVideo(
